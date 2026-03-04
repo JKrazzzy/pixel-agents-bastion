@@ -1,4 +1,6 @@
-# Pixel Agents
+# Pixel Agents (Bastion Recreation)
+
+This repository is a recreation of [pablodelucca/pixel-agents](https://github.com/pablodelucca/pixel-agents) by Sovereign-Bastion for independent implementation tracking and compliance verification.
 
 A VS Code extension that turns your AI coding agents into animated pixel art characters in a virtual office.
 
@@ -36,8 +38,8 @@ If you just want to use Pixel Agents, the easiest way is to download the [VS Cod
 ### Install from source
 
 ```bash
-git clone https://github.com/pablodelucca/pixel-agents.git
-cd pixel-agents
+git clone https://github.com/JKrazzzy/pixel-agents-bastion.git
+cd pixel-agents-bastion
 npm install
 cd webview-ui && npm install && cd ..
 npm run build
@@ -67,8 +69,7 @@ The grid is expandable up to 64×64 tiles. Click the ghost border outside the cu
 
 ### Office Assets
 
-The office tileset used in this project and available via the extension is **[Office Interior Tileset (16x16)](https://donarg.itch.io/officetileset)** by **Donarg**, available on itch.io for **$2 USD**.
-
+The office tileset used in this project and available via the extension is **[Office Interior Tileset (16x16)](https://donarg.itch.io/officetileset)** by **Donarg**, available on itch.io for **$2 USD**.<br>
 This is the only part of the project that is not freely available. The tileset is not included in this repository due to its license. To use Pixel Agents locally with the full set of office furniture and decorations, purchase the tileset and run the asset import pipeline:
 
 ```bash
@@ -81,7 +82,7 @@ The extension will still work without the tileset — you'll get the default cha
 
 ## How It Works
 
-Pixel Agents watches Claude Code's JSONL transcript files to track what each agent is doing. When an agent uses a tool (like writing a file or running a command), the extension detects it and updates the character's animation accordingly. No modifications to Claude Code are needed — it's purely observational.
+Pixel Agents watches Claude Code’s JSONL transcript files to track what each agent is doing. When an agent uses a tool (like writing a file or running a command), the extension detects it and updates the character’s animation accordingly. No modifications to Claude Code are needed — it’s purely observational.
 
 The webview runs a lightweight game loop with canvas rendering, BFS pathfinding, and a character state machine (idle → walk → type/read). Everything is pixel-perfect at integer zoom levels.
 
@@ -93,7 +94,7 @@ The webview runs a lightweight game loop with canvas rendering, BFS pathfinding,
 ## Known Limitations
 
 - **Agent-terminal sync** — the way agents are connected to Claude Code terminal instances is not super robust and sometimes desyncs, especially when terminals are rapidly opened/closed or restored across sessions.
-- **Heuristic-based status detection** — Claude Code's JSONL transcript format does not provide clear signals for when an agent is waiting for user input or when it has finished its turn. The current detection is based on heuristics (idle timers, turn-duration events) and often misfires — agents may briefly show the wrong status or miss transitions.
+- **Heuristic-based status detection** — Claude Code’s JSONL transcript format does not provide clear signals for when an agent is waiting for user input or when it has finished its turn. The current detection is based on heuristics (idle timers, turn-duration events) and often misfires — agents may briefly show the wrong status or miss transitions.
 - **Windows-only testing** — the extension has only been tested on Windows 11. It may work on macOS or Linux, but there could be unexpected issues with file watching, paths, or terminal behavior on those platforms.
 
 ## Roadmap
@@ -107,7 +108,7 @@ There are several areas where contributions would be very welcome:
 - **Desks as directories** — click on a desk to select a working directory, drag and drop agents or click-to-assign to move them to specific desks/projects
 - **Claude Code agent teams** — native support for [agent teams](https://code.claude.com/docs/en/agent-teams), visualizing multi-agent coordination and communication
 - **Git worktree support** — agents working in different worktrees to avoid conflict from parallel work on the same files
-- **Support for other agentic frameworks** — [OpenCode](https://github.com/nichochar/opencode), or really any kind of agentic experiment you'd want to run inside a pixel art interface (see [simile.ai](https://simile.ai/) for inspiration)
+- **Support for other agentic frameworks** — [OpenCode](https://github.com/nichochar/opencode), or really any kind of agentic experiment you’d want to run inside a pixel art interface (see [simile.ai](https://simile.ai/) for inspiration)
 
 If any of these interest you, feel free to open an issue or submit a PR.
 
@@ -131,3 +132,13 @@ If you find Pixel Agents useful, consider supporting its development:
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
+## Progress
+
+- **Initial Recreation**: Repository cloned, initialized, and pushed to `JKrazzzy/pixel-agents-bastion`.
+- **README Update**: README has been updated to reflect the new repository and include a progress section.
+
+## Current Tasks
+
+- Verify project builds and runs in the new environment.
+- Investigate `npm install` and `npm run build` status.
