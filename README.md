@@ -11,3 +11,6 @@ To be updated as the recreation progresses.
 
 ## Current Status
 (Automatically updated by Sovereign-Bastion)
+
+---
+*Original description from remote: Bastion recreation of pablodelucca/pixel-agents*
